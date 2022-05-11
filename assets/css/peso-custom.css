@@ -1,0 +1,285 @@
+/* input {
+    text-transform: uppercase !important;
+} */
+
+.ui-content {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.ui-title {
+    color: blue;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.header-padding {
+    padding: 10px;
+}
+
+.data-padding {
+    padding: 10px;
+}
+
+.ui-content.ui-header {
+    height: 30px;
+    margin-bottom: 20px;
+    background-color: cornsilk;
+}
+
+.ui-content.ui-application {
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+}
+
+.remove-loader-gear {
+    display: none;
+}
+
+.error-msg {
+    font-size: 8pt;
+    color: red;
+    font-style: italic;
+}
+
+.error-field {
+    border-color: red;
+}
+
+.applicant {
+    cursor: pointer !important;
+}
+
+.info-label {
+    min-width: 100px;
+    color: grey;
+}
+
+.personal-info {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+}
+
+.btn-upload {
+    bottom: 10px;
+    width: 135px;
+    position: absolute;
+}
+
+.edit-info {
+    float: right;
+    top: 0px;
+    margin-right: 10px;
+    color: blue;
+}
+
+.edit-info:hover {
+    cursor: pointer;
+}
+
+.close {
+    cursor: pointer !important;
+}
+
+#applicantSearched>li:hover {
+    background-color: #dd4b39 !important;
+    cursor: pointer !important;
+    color: white;
+}
+
+.title-md {
+    text-align: center;
+    font-weight: bolder;
+    color: orange;
+}
+
+.register-job-seeker {
+    margin-top: 100px;
+    padding: 30px;
+    border: tomato solid 1px;
+    border-radius: 5px;
+    box-shadow: 3px 2px 3px tomato;
+}
+
+.filter-jobs {
+    padding: 20px;
+    display: block;
+    margin-top: 10px;
+    float: center;
+}
+
+.category {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    min-width: 170px;
+}
+
+.rr-body {
+    min-height: 816px;
+    width: 1248px;
+    /* border-style: solid;
+    border-color: #F97502; */
+    font-family: 'calibri';
+    font-size: 11.0pt;
+    overflow-y: hidden;
+}
+
+.printArea {
+    overflow-x: scroll;
+}
+
+.rr-header {
+    text-align: center;
+    font-size: 12pt;
+    /* border-style: solid;
+    border-color: #F97502; */
+}
+
+.rr-header>img {
+    width: 100%;
+    height: 100px;
+    top: 0;
+}
+
+.loading {
+    background-color: rgba(169, 169, 169, 0.521);
+    background-image: url("../images/loading_gear.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* min-height: 100%; */
+    /* width: 100%; */
+    z-index: 5000;
+    position: fixed;
+    /* position: absolute !important; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#ofwList,
+td {
+    font-size: 10.0pt;
+}
+
+.remove-loading {
+    display: none;
+}
+
+.bg-orange-gradient {
+    background: #f38609 !important;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f38609), color-stop(1, #f7000c)) !important;
+    background: -ms-linear-gradient(bottom, #f7000c, #f7000c) !important;
+    background: -moz-linear-gradient(center bottom, #f7000c 0, #e47365 100%) !important;
+    background: -o-linear-gradient(#f7000c, #dd4b39) !important;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#f7000c', endColorstr='#f7000c', GradientType=0) !important;
+    color: #fff
+}
+
+#js_status {
+    overflow-y: hidden;
+    height: 200px;
+}
+
+#js_status:hover {
+    overflow-y: scroll;
+}
+
+#ofwList_paginate {
+    float: left !important;
+}
+
+.company_list {
+    height: 130px;
+    overflow-y: scroll;
+}
+
+@media only screen and (max-width: 768px) {
+    .job-header {
+        display: none;
+    }
+    .job-categories {
+        display: none;
+    }
+    .filter-jobs {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .job-header {
+        display: block;
+    }
+    .job-categories {
+        display: block;
+    }
+    .filter-jobs {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .job-header {
+        display: none;
+    }
+}
+
+.job-browse-card:hover {
+    cursor: pointer;
+    border: 1px solid orangered;
+    box-shadow: 3px 3px 6px orange;
+}
+
+.registration-form {
+    border: 2px solid orangered;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+
+/* 
+.registration-form:hover {
+    height: 550px;
+    overflow-y: scroll;
+} */
+
+.stay-on-top {
+    top: 50px;
+    right: 10px;
+    position: fixed;
+    z-index: 100;
+    width: 400px;
+}
+
+.footer {
+    bottom: 0;
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    background-color: rgba(245, 93, 23, 0.733);
+}
+
+.footer-bg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url("../images/mayor-1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom right;
+    text-align: center;
+}
+
+.position {
+    font-size: 12pt;
+    font-weight: bold;
+}

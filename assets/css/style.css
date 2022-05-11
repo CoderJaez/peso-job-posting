@@ -1,0 +1,177 @@
+.my-alert-warning {
+    border-color: #f39c12;
+}
+
+.table_border {
+    border-color: #3c8dbc !important;
+    background-color: #cce8f9 !important
+}
+
+.input_search {
+    background-color: #d4d4d4 !important;
+    border-color: #8c8c8c !important;
+}
+
+#searchedData {
+    overflow-y: auto;
+    position: absolute;
+    z-index: 1;
+}
+
+.flat-input {
+    border-bottom: solid #d2d6de;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.profile-pic {
+    border: 3px solid hsl(220, 15%, 85%);
+    border-radius: 5px;
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+}
+
+.profile-pic>img {
+    width: 100%;
+    height: 100%;
+}
+
+.user-profile-pic {
+    border: 3px solid #d2d6de;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#input-photo {
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+}
+
+#input-photo-user {
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+}
+
+.profile-background:hover {
+    opacity: 0.2
+}
+
+#studentSearched {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#studentSearched>li {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    color: black !important;
+}
+
+#studentSearched>li:hover {
+    background-color: #dd4b39 !important;
+}
+
+.company_list>li:hover {
+    background-color: #dd4b39 !important;
+    color: #f8f8f8 !important;
+    cursor: pointer;
+}
+
+#studentSearch>li:hover {
+    background-color: #dd4b39 !important;
+}
+
+#student-list-counsel>li:hover {
+    background-color: #dd4b39 !important;
+}
+
+.student-list {
+    overflow: auto !important;
+    height: 300px;
+}
+
+.bg {
+    background-image: url("../images/zsnhs-bg.jpg") !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.login-box {
+    background-color: whitesmoke;
+    opacity: 0.9;
+    box-shadow: 5px 3px 4px #8c8c8c
+}
+
+.badge-primary {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.badge-warning {
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.badge-success {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.badge-info {
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.badge-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    /* Light grey */
+    border-top: 5px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+    z-index: 1;
+    margin-left: 50.555%;
+    position: absolute;
+    display: block;
+}
+
+.loader-admission {
+    border: 5px solid #f3f3f3;
+    /* Light grey */
+    border-top: 5px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    z-index: 1;
+    margin-left: 45.555%;
+    position: absolute;
+    display: block;
+}
+
+.loader-bg {
+    background-color: rgba(158, 154, 154, 0.274) !important;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

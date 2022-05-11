@@ -1,0 +1,59 @@
+/* Important part */
+
+.modal-body-custom {
+    height: 500px;
+    overflow-y: auto;
+}
+
+.rl-body {
+    width: 816px;
+    min-height: 1248px;
+    font-family: 'calibri';
+}
+
+.rl-header>img {
+    width: 816px;
+    /* height: 100x; */
+}
+
+.rl-date {
+    position: relative;
+    text-align: right;
+}
+
+.rl-content {
+    margin-top: -300px;
+    font-size: 10px;
+    margin-left: 96px;
+    margin-right: 96x;
+    width: 624px;
+    min-height: 200px;
+}
+
+.rl-p {
+    text-indent: 1cm;
+}
+
+.rl-contact {
+    font-size: 10px;
+    line-height: 1.0;
+}
+
+.rl-signatories {
+    position: relative;
+    text-align: right;
+}
+
+.rl-signatories>p {
+    line-height: 1.0;
+}
+
+.rl-signatories>p>span {
+    font-weight: bold;
+}
+
+.rl-1copy {
+    height: 400px;
+    width: 816px;
+    /* border-style: solid */
+}

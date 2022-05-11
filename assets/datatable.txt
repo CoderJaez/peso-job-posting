@@ -1,0 +1,168 @@
+<?php
+
+class Homemodel extends CI_Model 
+{
+    function __construct() {
+        parent::__construct(); 
+        
+    }
+
+    function allposts_count()
+    {   
+        $query = $this
+                ->db
+                ->get('posts');
+    
+        return $query->num_rows();  
+
+    }
+    
+    function allposts($limit,$start,$col,$dir)
+    {   
+       $query = $this
+                ->db
+                ->limit($limit,$start)
+                ->order_by($col,$dir)
+                ->get('posts');
+        
+        if($query->num_rows()>0)
+        {
+            return $query->result(); 
+        }
+        else
+        {
+            return null;
+        }
+        
+    }
+   
+    function posts_search($limit,$start,$search,$col,$dir)
+    {
+        $query = $this
+                ->db
+                ->like('id',$search)
+                ->or_like('title',$search)
+                ->limit($limit,$start)
+                ->order_by($col,$dir)
+                ->get('posts');
+        
+       
+        if($query->num_rows()>0)
+        {
+            return $query->result();  
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    function posts_search_count($search)
+    {
+        $query = $this
+                ->db
+                ->like('id',$search)
+                ->or_like('title',$search)
+                ->get('posts');
+    
+        return $query->num_rows();
+    } 
+   
+}
+
+//controller
+
+public function posts()
+{
+
+        $columns = array( 
+                            0 =>'id', 
+                            1 =>'title',
+                            2=> 'body',
+                            3=> 'created_at',
+                            4=> 'id',
+                        );
+
+        $limit = $this->input->post('length');
+        $start = $this->input->post('start');
+        $order = $columns[$this->input->post('order')[0]['column']];
+        $dir = $this->input->post('order')[0]['dir'];
+  
+        $totalData = $this->Homemodel->allposts_count();
+            
+        $totalFiltered = $totalData; 
+            
+        if(empty($this->input->post('search')['value']))
+        {            
+            $posts = $this->Homemodel->allposts($limit,$start,$order,$dir);
+        }
+        else {
+            $search = $this->input->post('search')['value']; 
+
+            $posts =  $this->Homemodel->posts_search($limit,$start,$search,$order,$dir);
+
+            $totalFiltered = $this->Homemodel->posts_search_count($search);
+        }
+
+        $data = array();
+        if(!empty($posts))
+        {
+            foreach ($posts as $post)
+            {
+
+                $nestedData['id'] = $post->id;
+                $nestedData['title'] = $post->title;
+                $nestedData['body'] = substr(strip_tags($post->body),0,50)."...";
+                $nestedData['created_at'] = date('j M Y h:i a',strtotime($post->created_at));
+                
+                $data[] = $nestedData;
+
+            }
+        }
+          
+        $json_data = array(
+                    "draw"            => intval($this->input->post('draw')),  
+                    "recordsTotal"    => intval($totalData),  
+                    "recordsFiltered" => intval($totalFiltered), 
+                    "data"            => $data   
+                    );
+            
+        echo json_encode($json_data); 
+}
+
+
+ <div class="row">
+    <div class="col-md-12">
+               <table class="table table-bordered" id="posts">
+                    <thead>
+                           <th>Id</th>
+                           <th>Title</th>
+                           <th>Body</th>
+                           <th>Created At</th>
+                    </thead>                
+               </table>
+        </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('#posts').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax":{
+             "url": "<?php echo base_url('home/posts') ?>",
+             "dataType": "json",
+             "type": "POST",
+             "data":{  '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>' }
+                           },
+        "columns": [
+                  { "data": "id" },
+                  { "data": "title" },
+                  { "data": "body" },
+                  { "data": "created_at" },
+               ]     
+
+        });
+    });
+</script>
