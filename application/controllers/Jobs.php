@@ -14,7 +14,7 @@ class Jobs extends CI_Controller
     private $limit = 10;
     private $offset = 0;
 
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
     }

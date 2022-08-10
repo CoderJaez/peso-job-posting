@@ -1,7 +1,7 @@
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header"><a class="navbar-brand" href="<?= base_url('jobs') ?>">PESO PAGADIAN</a>
+            <div class="navbar-header"><a class="navbar-brand" href="<?= base_url('jobs') ?>">Akini Job Site</a>
 
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
                         class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
